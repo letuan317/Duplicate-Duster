@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="buttons.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="icons8-duster-96.png" />
+  </head>
+
+  <body>
+    <!-- <button onclick="test()" id="test">Test</button> -->
+    <nav>
+      <div id="tab-target" class="tab tab-active" onclick="changeActiveTab('tab-target')">Target</div>
+      <div id="tab-source-target" class="tab" onclick="changeActiveTab('tab-source-target')">Source-Target</div>
+    </nav>
+    <section id="tab-target-container">
+      <div class="row hidden" id="source-folder-container">
+        <div class="col col-200">
+          <button onclick="selectFolder('source')">Choose source folder</button>
+        </div>
+        <div class="col col-600"><p id="source-folder" class="select-content-text"></p></div>
+      </div>
+      <div class="row">
+        <div class="col col-200">
+          <button onclick="selectFolder('target')">Choose target folder</button>
+        </div>
+        <div class="col col-600">
+          <p id="target-folder" class="select-content-text"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-200">
+          <button onclick="selectFolder('move')" class="disabled" id="select-move-folder-button">Choose move folder</button>
+        </div>
+        <div class="col col-400"><p id="move-folder" class="select-content-text"></p></div>
+        <div class="col col-200">
+          <input type="radio" name="radio-delete-type" value="delete" id="radio_delete" onchange="changeActionDelete('delete')" checked />
+          <label for="delete">Delete</label>
+          <input type="radio" name="radio-delete-type" value="move" id="radio_move" onchange="changeActionDelete('move')" />
+          <label for="move">Move</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-200"></div>
+        <div class="col col-400">
+          <button onclick="run()" id="run-button">Run</button>
+          <button onclick="stop()" id="stop-button" style="display: none">Stop</button>
+        </div>
+      </div>
+    </section>
+    <section id="results-container">
+      <table style="width: 100%" id="results-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Path</th>
+            <th>Size</th>
+            <th>Creation Date</th>
+          </tr>
+        </thead>
+        <tbody id="results-table-body"></tbody>
+      </table>
+    </section>
+    <section>
+      <div class="row disabled" id="delete-option-container">
+        <div class="col col-200">
+          <button onclick="deleteAuto()" id="auto-delete-button">AUTO DELETE</button>
+        </div>
+        <div class="col col-200" id="checkbox-delete-copy-container">
+          <input type="checkbox" id="checkbox-delete-copy" name="checkbox-delete-copy" value="checkbox-delete-copy" checked /> <label for="checkbox-delete-copy">Copy files</label>
+        </div>
+        <div class="col col-200" id="checkbox-delete-newer-container">
+          <input type="checkbox" id="checkbox-delete-newer" name="checkbox-delete-newer" value="checkbox-delete-newer" checked /> <label for="checkbox-delete-newer">Newer files</label>
+        </div>
+        <div class="col col-200 border-left">
+          <button onclick="deleteSelected()" id="delete-selected-button" disabled>Delete Selected</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="logs-container"></section>
+    <progress id="progress-bar" value="0" max="100"></progress>
+    <div id="progress-text">0%</div>
+    <div id="popup">
+      <div class="exit-icon" onclick="closePopup()">X</div>
+      <div id="popup-container">
+        <!-- <img src="https://play-lh.googleusercontent.com/E8QLvkZCFcpLce12OPNl4rUkR_Dv9B6BDnwaHHlYWXEItKFLYrhdFFfYNxH8QlvyTx0" /> -->
+        <!-- <audio src="audio-file.mp3" controls>Your browser does not support the <code>audio</code> element.</audio> -->
+        <!-- <video src="video-file.mp4" controls>Your browser does not support the <code>video</code> element.</video> -->
+      </div>
+    </div>
+    <script>
+      window.addEventListener("resize", function () {
+        window.resizeTo(880, 900);
+      });
+    </script>
+  </body>
+</html>

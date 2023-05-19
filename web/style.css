@@ -1,0 +1,285 @@
+body {
+  background-color: var(--gray);
+
+  --dark-green: #264653ff;
+  --green: #2a9d8fff;
+  --yellow: #e9c46aff;
+  --orange: #f4a261ff;
+  --red: #e76f51ff;
+  --gray: #edede9;
+  width: 850px;
+  height: 850px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  /* outline: 1px solid red; */
+}
+
+* {
+  /* outline: 1px solid red; */
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  height: 30px;
+  position: relative;
+  background-color: white;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  margin: 0;
+  color: black;
+}
+
+nav .tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.tab-active {
+  background-color: var(--green);
+  font-weight: bold;
+  color: white;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  width: 800px !important;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  word-wrap: break-word;
+  width: 95%;
+  padding: 0;
+  margin: 0;
+}
+
+.text-center {
+  text-align: center;
+  justify-content: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.disabled .disabled-cell {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.border-left {
+  border-left: 1px solid var(--gray);
+}
+
+section {
+  width: 800px;
+  margin-left: 25px;
+  margin-top: 10px;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+progress {
+  width: 780px;
+  height: 50px;
+  margin-left: 10px;
+  position: fixed;
+  bottom: 0px;
+}
+
+#progress-text {
+  z-index: 3;
+  color: var(--green);
+  width: 780px;
+  /* height: 50px; */
+  margin-left: 10px;
+  position: fixed;
+  bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+button {
+  width: 150px;
+  height: 30px;
+  border: transparent;
+  background-color: var(--gray);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.col-100 {
+  width: 100px !important;
+}
+
+.col-200 {
+  width: 200px !important;
+}
+
+.col-300 {
+  width: 300px !important;
+}
+
+.col-400 {
+  width: 400px !important;
+}
+
+.col-500 {
+  width: 500px !important;
+}
+
+.col-600 {
+  width: 600px !important;
+}
+
+.col-700 {
+  width: 700px !important;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 98%;
+  margin-left: 1%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+td {
+  font-size: 0.6rem;
+}
+
+#test {
+  position: absolute;
+  z-index: 99;
+}
+
+#tab-target-container {
+  height: 150px;
+}
+
+#radio_move {
+  margin-left: 30px;
+}
+
+#run-button {
+  background-color: var(--green);
+  color: white;
+}
+
+#stop-button {
+  background-color: var(--red);
+  color: white;
+}
+
+#results-container {
+  height: 350px;
+  position: relative;
+  overflow: scroll;
+}
+
+#auto-delete-button {
+  background-color: var(--orange);
+  color: white;
+}
+
+#delete-selected-button {
+  /* width: 200px !important; */
+  /* margin-top: 20px;
+  margin-bottom: 20px;
+  float: right;
+  margin-right: 50px; */
+  background-color: var(--red);
+  color: white;
+}
+
+#logs-container {
+  width: 780px;
+  height: 100px;
+  padding: 10px;
+  position: relative;
+  overflow-y: scroll;
+  font-size: 0.7rem;
+}
+
+#popup {
+  display: none;
+  position: absolute;
+  width: 307px;
+  height: 367px;
+  top: 220px;
+  right: 25px;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+#popup .exit-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bolder;
+  color: red;
+  cursor: pointer;
+  z-index: 99;
+  background-color: white;
+}
+
+#popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+#popup-container img,
+#popup-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#popup-container p {
+  position: absolute;
+  z-index: 3;
+  background: var(--gray);
+  top: 0;
+  text-align: center;
+  font-size: 10px;
+}
