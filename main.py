@@ -10,7 +10,7 @@ from utils import duplicate, logs, structures
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-t", "--target", help="Folder target")
-    parser.add_argument("--targets", help="Folder targets")
+    parser.add_argument("-f", "--folder", help="Folder targets")
     parser.add_argument("-s", "--source", help="Folder source")
     parser.add_argument("-m", "--move", help="Folder move")
     parser.add_argument(
@@ -35,6 +35,6 @@ if __name__ == '__main__':
         duplicate.find_duplicate_files_by_target(
             args.target, args.move, delete)
 
-    if args.targets:
+    if args.folder:
         duplicate.find_duplicate_files_by_folders_in_target(
-            args.targets, args.move, delete)
+            args.folder, args.move, delete)
